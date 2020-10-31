@@ -55,16 +55,16 @@ export default {
   opacity: 0.7;
 }
 .userMenu__minorSectionItem {
-  margin-left: 25px;
+  margin-right: 25px;
 }
 .userMenu__notificationItem {
-  margin-right: 20px;
+  margin-right: 25px;
   margin-left: auto;
 }
 @media screen and (min-width: 768px) {
   .userMenu__minorSectionsWrapper {
     margin-left: auto;
-    margin-right: 20px;
+    margin-right: 0;
   }
 }
 </style>
