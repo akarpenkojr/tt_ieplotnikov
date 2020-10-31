@@ -1,6 +1,10 @@
 <template>
   <div class="mainMenu">
-    <Hamburger :showMainMenu="showMainMenu" @click="switchMainMenu" />
+    <Hamburger
+      :showMainMenu="showMainMenu"
+      @click="switchMainMenu"
+      class="mainMenu__hamburgerItem"
+    />
   </div>
 </template>
 
@@ -26,5 +30,10 @@ export default {
 <style scoped lang="scss">
 .mainMenu {
   align-self: center;
+}
+@media screen and (min-width: 768px) {
+  .mainMenu__hamburgerItem {
+    display: none;
+  }
 }
 </style>
