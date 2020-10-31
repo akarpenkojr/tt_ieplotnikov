@@ -29,14 +29,14 @@ export default {
   padding-left: 20px;
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .navBar {
     padding-right: 30px;
     padding-left: 30px;
   }
 }
 
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .navBar {
     width: 60px;
     height: 100vh;

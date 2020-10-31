@@ -55,4 +55,10 @@ export default {
   margin-right: 20px;
   margin-left: auto;
 }
+@media screen and (min-width: 768px) {
+  .userMenu__minorSectionsWrapper {
+    margin-left: auto;
+    margin-right: 20px;
+  }
+}
 </style>
