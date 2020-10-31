@@ -58,7 +58,7 @@ export default {
 .hamburger-inner {
   display: block;
   top: 50%;
-  margin-top: -2px;
+  transform: translateY(-50%);
 }
 .hamburger-inner,
 .hamburger-inner::before,
