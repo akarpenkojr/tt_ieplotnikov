@@ -14,10 +14,7 @@ export default {
     MainMenu,
     UserMenu
   },
-  name: "NavBar",
-  props: {
-    msg: String
-  }
+  name: "NavBar"
 };
 </script>
 
