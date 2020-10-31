@@ -1,8 +1,7 @@
 <template>
   <div
     class="hamburger hamburger--squeeze"
-    :class="{ 'is-active': showMainMenu }"
-    @click="test"
+    :class="{ 'is-active': this.showMainMenu }"
   >
     <div class="hamburger-box">
       <div class="hamburger-inner"></div>
@@ -13,16 +12,13 @@
 <script>
 export default {
   name: "Hamburger",
-  data: function() {
-    return {
-      showMainMenu: false
-    };
-  },
-  methods: {
-    test() {
-      this.showMainMenu = !this.showMainMenu;
+  props: {
+    showMainMenu: {
+      type: Boolean
     }
-  }
+  },
+  data: () => ({}),
+  methods: {}
 };
 </script>
 

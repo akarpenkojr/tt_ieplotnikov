@@ -1,6 +1,6 @@
 <template>
   <div class="mainMenu">
-    <Hamburger />
+    <Hamburger :showMainMenu="showMainMenu" @click="switchMainMenu" />
   </div>
 </template>
 
@@ -11,6 +11,14 @@ export default {
   name: "MainMenu",
   components: {
     Hamburger
+  },
+  data: () => ({
+    showMainMenu: false
+  }),
+  methods: {
+    switchMainMenu() {
+      this.showMainMenu = !this.showMainMenu;
+    }
   }
 };
 </script>
