@@ -47,9 +47,17 @@ export default {
   align-self: center;
   display: flex;
   flex-direction: row;
-}
-.mainMenu__item {
-  display: none;
+  &__item {
+    display: none;
+    transition: opacity 0.175s ease;
+    -webkit-transition: opacity 0.175s ease;
+    -moz-transition: opacity 0.175s ease;
+    -o-transition: opacity 0.175s ease;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
 }
 .mainMenu__hamburgerItem {
   display: inline-block;

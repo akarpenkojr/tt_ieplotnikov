@@ -6,6 +6,7 @@
     <openMenuButtonIcon
       class="navBar__openMenuButtonIcon navBar__item"
       @click="switchNavBar"
+      :class="{ 'navBar__openMenuButtonIcon--isActive': isNavBarUnfolded }"
     />
   </div>
 </template>
@@ -46,7 +47,7 @@ export default {
   padding-left: 20px;
 }
 .navBar__openMenuButtonIcon {
-  visibility: hidden;
+  display: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -94,9 +95,21 @@ export default {
     }
     &__openMenuButtonIcon {
       order: 4;
-      visibility: visible;
+      display: inline-block;
       margin-top: 35px;
-      margin-bottom: 35px;
+      margin-bottom: 14px;
+      transition: opacity 0.175s ease, transform 0.5s ease-in-out;
+      -webkit-transition: opacity 0.175s ease,
+        -webkit-transform 0.5s ease-in-out;
+      -moz-transition: opacity 0.175s ease, -moz-transform 0.5s ease-in-out;
+      -o-transition: opacity 0.175s ease, -o-transform 0.5s ease-in-out;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.7;
+      }
+      &--isActive {
+        transform: rotate(180deg);
+      }
     }
   }
 }

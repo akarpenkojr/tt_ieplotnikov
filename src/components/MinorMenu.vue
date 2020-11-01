@@ -30,6 +30,9 @@ export default {
     align-self: center;
     transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
     transition: opacity 0.175s ease;
+    -webkit-transition: opacity 0.175s ease;
+    -moz-transition: opacity 0.175s ease;
+    -o-transition: opacity 0.175s ease;
     cursor: pointer;
     margin-right: 25px;
   }
