@@ -47,7 +47,6 @@ export default {
       margin-left: auto;
     }
     &__rulesSectionItem {
-      margin-bottom: 83px;
       margin-top: 25px;
     }
   }

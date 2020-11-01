@@ -3,6 +3,7 @@
     <MainMenu class="navBar__mainMenu" />
     <MinorMenu class="navBar__minorMenu" />
     <UserMenu class="navBar__userMenu" />
+    <openMenuButtonIcon class="navBar__openMenuButtonIcon" />
   </div>
 </template>
 
@@ -10,12 +11,14 @@
 import MainMenu from "@/components/MainMenu.vue";
 import UserMenu from "@/components/UserMenu.vue";
 import MinorMenu from "@/components/MinorMenu.vue";
+import openMenuButtonIcon from "@/components/openMenuButtonIcon";
 
 export default {
   components: {
     MainMenu,
     UserMenu,
-    MinorMenu
+    MinorMenu,
+    openMenuButtonIcon
   },
   name: "NavBar"
 };
@@ -30,6 +33,9 @@ export default {
   background-color: rgba(51, 51, 51, 1);
   padding-right: 20px;
   padding-left: 20px;
+}
+.navBar__openMenuButtonIcon {
+  display: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -55,6 +61,11 @@ export default {
     }
     &__minorMenu {
       order: 3;
+    }
+    &__openMenuButtonIcon {
+      order: 4;
+      display: inline-block;
+      margin: 35px auto 14px auto;
     }
   }
 }
