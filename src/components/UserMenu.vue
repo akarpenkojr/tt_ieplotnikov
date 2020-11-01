@@ -1,27 +1,17 @@
 <template>
   <div class="userMenu">
-    <div class="userMenu__minorSectionsWrapper">
-      <OptionsSection class="userMenu__item userMenu__minorSectionItem" />
-      <RulesSection class="userMenu__item userMenu__minorSectionItem" />
-    </div>
-    <div class="userMenu__profileSectionsWrapper">
-      <NotificationsSection class="userMenu__item userMenu__notificationItem" />
-      <ProfileSection class="userMenu__item" />
-    </div>
+    <NotificationsSection class="userMenu__item userMenu__notificationItem" />
+    <ProfileSection class="userMenu__item userMenu__profileItem" />
   </div>
 </template>
 
 <script>
-import RulesSection from "@/components/RulesSection";
-import OptionsSection from "@/components/OptionsSection";
 import NotificationsSection from "@/components/NotificationsSection";
 import ProfileSection from "@/components/ProfileSection";
 
 export default {
   name: "UserMenu",
   components: {
-    RulesSection,
-    OptionsSection,
     NotificationsSection,
     ProfileSection
   }
@@ -33,16 +23,6 @@ export default {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: flex-end;
-  align-self: center;
-  width: 100%;
-}
-.userMenu__minorSectionsWrapper {
-  margin-left: 0;
-  margin-right: auto;
-  align-self: center;
-}
-.userMenu__profileSectionsWrapper {
   align-self: center;
 }
 .userMenu__item {
@@ -54,17 +34,27 @@ export default {
 .userMenu__item:hover {
   opacity: 0.7;
 }
-.userMenu__minorSectionItem {
-  margin-right: 25px;
-}
 .userMenu__notificationItem {
   margin-right: 25px;
-  margin-left: auto;
 }
-@media screen and (min-width: 768px) {
-  .userMenu__minorSectionsWrapper {
-    margin-left: auto;
-    margin-right: 0;
+@media screen and (min-width: 1024px) {
+  .userMenu {
+    flex-direction: column;
+    justify-content: flex-start;
+    width: auto;
+    &__item {
+      margin-right: auto;
+      margin-left: auto;
+    }
+    &__profileItem {
+      order: 1;
+      margin-top: 13px;
+      margin-bottom: 20px;
+    }
+    &__notificationItem {
+      order: 2;
+      margin-bottom: 17px;
+    }
   }
 }
 </style>

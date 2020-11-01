@@ -1,18 +1,21 @@
 <template>
   <div class="navBar">
-    <MainMenu />
-    <UserMenu />
+    <MainMenu class="navBar__mainMenu" />
+    <MinorMenu class="navBar__minorMenu" />
+    <UserMenu class="navBar__userMenu" />
   </div>
 </template>
 
 <script>
 import MainMenu from "@/components/MainMenu.vue";
 import UserMenu from "@/components/UserMenu.vue";
+import MinorMenu from "@/components/MinorMenu.vue";
 
 export default {
   components: {
     MainMenu,
-    UserMenu
+    UserMenu,
+    MinorMenu
   },
   name: "NavBar"
 };
@@ -38,9 +41,21 @@ export default {
 
 @media screen and (min-width: 1024px) {
   .navBar {
+    padding: 0;
     width: 60px;
     height: 100vh;
     flex-direction: column;
+    align-content: flex-start;
+    &__mainMenu {
+      order: 2;
+      margin-bottom: auto;
+    }
+    &__userMenu {
+      order: 1;
+    }
+    &__minorMenu {
+      order: 3;
+    }
   }
 }
 </style>

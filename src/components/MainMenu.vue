@@ -65,4 +65,17 @@ export default {
     margin-right: 31px;
   }
 }
+@media screen and (min-width: 1024px) {
+  .mainMenu {
+    flex-direction: column;
+    border-top: 1px solid #45484e;
+    padding-top: 25px;
+    width: 100%;
+    &__item {
+      margin-right: auto;
+      margin-left: auto;
+      margin-bottom: 33px;
+    }
+  }
+}
 </style>
