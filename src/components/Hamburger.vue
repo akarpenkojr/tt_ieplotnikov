@@ -1,7 +1,7 @@
 <template>
   <div
     class="hamburger hamburger--squeeze"
-    :class="{ 'is-active': this.showMainMenu }"
+    :class="{ 'is-active': this.isShowedMainMenu }"
   >
     <div class="hamburger-box">
       <div class="hamburger-inner"></div>
@@ -13,7 +13,7 @@
 export default {
   name: "Hamburger",
   props: {
-    showMainMenu: {
+    isShowedMainMenu: {
       type: Boolean
     }
   },

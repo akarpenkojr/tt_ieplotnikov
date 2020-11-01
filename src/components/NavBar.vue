@@ -1,9 +1,12 @@
 <template>
-  <div class="navBar">
-    <MainMenu class="navBar__mainMenu" />
-    <MinorMenu class="navBar__minorMenu" />
-    <UserMenu class="navBar__userMenu" />
-    <openMenuButtonIcon class="navBar__openMenuButtonIcon" />
+  <div class="navBar" :class="{ 'navBar--isActive': isNavBarUnfolded }">
+    <MainMenu class="navBar__mainMenu navBar__item" />
+    <MinorMenu class="navBar__minorMenu navBar__item" />
+    <UserMenu class="navBar__userMenu navBar__item" />
+    <openMenuButtonIcon
+      class="navBar__openMenuButtonIcon navBar__item"
+      @click="switchNavBar"
+    />
   </div>
 </template>
 
@@ -20,7 +23,15 @@ export default {
     MinorMenu,
     openMenuButtonIcon
   },
-  name: "NavBar"
+  name: "NavBar",
+  data: () => ({
+    isNavBarUnfolded: false
+  }),
+  methods: {
+    switchNavBar() {
+      this.isNavBarUnfolded = !this.isNavBarUnfolded;
+    }
+  }
 };
 </script>
 
@@ -35,7 +46,7 @@ export default {
   padding-left: 20px;
 }
 .navBar__openMenuButtonIcon {
-  display: none;
+  visibility: hidden;
 }
 
 @media screen and (min-width: 768px) {
@@ -47,11 +58,23 @@ export default {
 
 @media screen and (min-width: 1024px) {
   .navBar {
+    position: relative;
     padding: 0;
     width: 60px;
     height: 100vh;
     flex-direction: column;
     align-content: flex-start;
+    transition: width 0.5s ease-in;
+    -webkit-transition: width 0.5s ease-in;
+    -moz-transition: width 0.5s ease-in;
+    -o-transition: width 0.5s ease-in;
+    &__item {
+      margin-left: 13px;
+      margin-right: auto;
+    }
+    &--isActive {
+      width: 200px;
+    }
     &__mainMenu {
       order: 2;
       margin-bottom: auto;
@@ -59,13 +82,21 @@ export default {
     &__userMenu {
       order: 1;
     }
+    &__mainMenu:before {
+      content: "";
+      border-bottom: 1px solid #45484e;
+      width: 100%;
+      position: absolute;
+      left: 0;
+    }
     &__minorMenu {
       order: 3;
     }
     &__openMenuButtonIcon {
       order: 4;
-      display: inline-block;
-      margin: 35px auto 14px auto;
+      visibility: visible;
+      margin-top: 35px;
+      margin-bottom: 35px;
     }
   }
 }

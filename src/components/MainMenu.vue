@@ -1,7 +1,7 @@
 <template>
   <div class="mainMenu">
     <Hamburger
-      :showMainMenu="showMainMenu"
+      :isShowedMainMenu="showMainMenuItems"
       @click="switchMainMenu"
       class="mainMenu__hamburgerItem"
     />
@@ -32,11 +32,11 @@ export default {
     StaffSection
   },
   data: () => ({
-    showMainMenu: false
+    showMainMenuItems: false
   }),
   methods: {
     switchMainMenu() {
-      this.showMainMenu = !this.showMainMenu;
+      this.showMainMenuItems = !this.showMainMenuItems;
     }
   }
 };
@@ -68,13 +68,15 @@ export default {
 @media screen and (min-width: 1024px) {
   .mainMenu {
     flex-direction: column;
-    border-top: 1px solid #45484e;
-    padding-top: 25px;
-    width: 100%;
+    width: 34px;
+    justify-items: flex-start;
     &__item {
       margin-right: auto;
       margin-left: auto;
       margin-bottom: 33px;
+      &:nth-child(2) {
+        margin-top: 25px;
+      }
     }
   }
 }

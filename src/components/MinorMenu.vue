@@ -41,7 +41,7 @@ export default {
 @media screen and (min-width: 1024px) {
   .minorMenu {
     flex-direction: column;
-    width: auto;
+    width: 34px;
     &__item {
       margin-right: auto;
       margin-left: auto;

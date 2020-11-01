@@ -41,7 +41,7 @@ export default {
   .userMenu {
     flex-direction: column;
     justify-content: flex-start;
-    width: auto;
+    width: 34px;
     &__item {
       margin-right: auto;
       margin-left: auto;
